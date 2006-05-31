@@ -7,6 +7,8 @@ Group:		Applications/Shells
 Source0:	http://ftp.debian.org/debian/pool/main/p/posh/%{name}_%{version}.tar.gz
 # Source0-md5:	56ca21ffb22ab80bcaecb88df5cff2e4
 URL:		http://packages.debian.org/unstable/source/posh
+Requires(post):	grep
+Requires(preun):	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir			/bin
