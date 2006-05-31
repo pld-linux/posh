@@ -1,7 +1,7 @@
 Summary:	Policy-compliant Ordinary SHell
 Name:		posh
 Version:	0.5
-Release:	0.2
+Release:	0.3
 License:	GPL v2+
 Group:		Applications/Shells
 Source0:	http://ftp.debian.org/debian/pool/main/p/posh/%{name}_%{version}.tar.gz
@@ -9,7 +9,7 @@ Source0:	http://ftp.debian.org/debian/pool/main/p/posh/%{name}_%{version}.tar.gz
 URL:		http://packages.debian.org/unstable/source/posh
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_exec_prefix	/
+%define		_bindir			/bin
 %define		_shell			%{_bindir}/posh
 
 %description
