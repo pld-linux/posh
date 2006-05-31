@@ -10,7 +10,7 @@ URL:		http://packages.debian.org/unstable/source/posh
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir			/bin
-%define		_shell			%{_bindir}/posh
+%define		_shell			%{_bindir}/%{name}
 
 %description
 posh is a stripped-down version of pdksh that aims for compliance with
