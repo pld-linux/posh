@@ -1,4 +1,5 @@
 Summary:	Policy-compliant Ordinary SHell
+Summary(pl):	Policy-compliant Ordinary SHell - zwyk³a pow³oka zgodna z polityk± Debiana
 Name:		posh
 Version:	0.5
 Release:	0.3
@@ -19,6 +20,13 @@ posh is a stripped-down version of pdksh that aims for compliance with
 Debian's policy, and few extra features.
 
 posh contains code from pdksh 5.2.14, which is "in the public domain."
+
+%description -l pl
+posh to okrojona wersja pdksh, której celem jest zgodno¶æ z polityk±
+Debiana i kilka dodatkowych mo¿liwo¶ci.
+
+posh zawiera kod pdksh 5.2.14, bêd±cy w³asno¶ci± publiczn± ("public
+domain").
 
 %prep
 %setup -q
