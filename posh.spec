@@ -1,5 +1,5 @@
 Summary:	Policy-compliant Ordinary SHell
-Summary(pl.UTF-8):   Policy-compliant Ordinary SHell - zwykła powłoka zgodna z polityką Debiana
+Summary(pl.UTF-8):	Policy-compliant Ordinary SHell - zwykła powłoka zgodna z polityką Debiana
 Name:		posh
 Version:	0.5
 Release:	0.3
