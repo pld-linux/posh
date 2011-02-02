@@ -1,15 +1,14 @@
 Summary:	Policy-compliant Ordinary SHell
 Summary(pl.UTF-8):	Policy-compliant Ordinary SHell - zwykła powłoka zgodna z polityką Debiana
 Name:		posh
-Version:	0.6.17
-Release:	0.1
+Version:	0.9.1
+Release:	1
 License:	GPL v2+
 Group:		Applications/Shells
 Source0:	http://ftp.debian.org/debian/pool/main/p/posh/%{name}_%{version}.tar.gz
-# Source0-md5:	7c72c2fb1a2a77131133f7b22737b878
+# Source0-md5:	d31d8f7570691bb3ec104d34be503b4b
 URL:		http://packages.debian.org/unstable/source/posh
-Requires(post):	grep
-Requires(preun):	sed >= 4.0
+BuildRequires:	rpmbuild(macros) >= 1.462
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir			/bin
@@ -37,25 +36,19 @@ domain").
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ ! -f /etc/shells ]; then
-	umask 022
-	echo '%{_shell}' > /etc/shells
-else
-	grep -q '^%{_shell}$' /etc/shells || echo '%{_shell}' >> /etc/shells
-fi
+%post	-p <lua>
+%lua_add_etc_shells %{_shell}
 
-%preun
-if [ "$1" = "0" ]; then
-	%{__sed} -i -e '/^%(echo %{_shell} | sed -e 's,/,\\/,g')$/d' /etc/shells
-fi
+%preun	-p <lua>
+if arg[2] == 0 then
+	%lua_remove_etc_shells %{_shell}
+end
 
 %files
 %defattr(644,root,root,755)
