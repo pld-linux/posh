@@ -1,12 +1,12 @@
 Summary:	Policy-compliant Ordinary SHell
 Summary(pl.UTF-8):	Policy-compliant Ordinary SHell - zwykła powłoka zgodna z polityką Debiana
 Name:		posh
-Version:	0.9.1
+Version:	0.10
 Release:	1
 License:	GPL v2+
 Group:		Applications/Shells
 Source0:	http://ftp.debian.org/debian/pool/main/p/posh/%{name}_%{version}.tar.gz
-# Source0-md5:	d31d8f7570691bb3ec104d34be503b4b
+# Source0-md5:	eea6d2bf89fe4da2a6d3636cc8caa0cf
 URL:		http://packages.debian.org/unstable/source/posh
 BuildRequires:	rpmbuild(macros) >= 1.462
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
